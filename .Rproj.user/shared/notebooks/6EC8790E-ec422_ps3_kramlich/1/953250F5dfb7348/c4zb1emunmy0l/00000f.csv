@@ -1,6 +1,0 @@
-"0","can_gas <- can_gas |>"
-"0","  mutate("
-"0","    growth_gap = abs(growth_direct - growth_logdiff)"
-"0","  )"
-"0",""
-"0","head(can_gas)"

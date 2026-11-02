@@ -1,7 +1,0 @@
-"0","can_gas |>"
-"0","  gg_season(log_volume) +"
-"0","  labs("
-"0","    title = ""Seasonal Pattern in Canadian Natural Gas Production"","
-"0","    y = ""Log Volume"""
-"0","  ) +"
-"0","  theme_minimal()"

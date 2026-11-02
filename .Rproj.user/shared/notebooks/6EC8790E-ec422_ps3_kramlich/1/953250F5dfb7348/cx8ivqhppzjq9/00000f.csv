@@ -1,8 +1,0 @@
-"0","can_gas_recent <- can_gas_recent |>"
-"0","  mutate("
-"0","    year = year(Month),"
-"0","    month = month(Month, label = TRUE),"
-"0","    quarter = quarter(Month)"
-"0","  )"
-"0",""
-"0","head(can_gas_recent)"

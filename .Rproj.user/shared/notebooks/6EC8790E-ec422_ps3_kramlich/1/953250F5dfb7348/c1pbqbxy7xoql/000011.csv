@@ -1,6 +1,0 @@
-"0","retail_ts <- retail_ts |>"
-"0","  group_by_key() |>"
-"0","  mutate(growth_mom = 100 * difference(log(sales))) |>"
-"0","  ungroup()"
-"0",""
-"0","head(retail_ts)"

@@ -1,4 +1,0 @@
-"0","can_gas <- canadian_gas |>"
-"0","  select(Month, Volume)"
-"0",""
-"0","has_gaps(can_gas)"

@@ -1,5 +1,0 @@
-"0","library(readr)"
-"0",""
-"0","retail_data <- read_csv(""data/retail_sales_raw.csv"")"
-"0",""
-"0","head(retail_data)"

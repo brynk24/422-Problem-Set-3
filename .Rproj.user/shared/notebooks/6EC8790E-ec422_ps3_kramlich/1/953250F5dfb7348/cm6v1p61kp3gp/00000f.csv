@@ -1,6 +1,0 @@
-"0","monthly_avg <- can_gas_recent |>"
-"0","  as_tibble() |>"
-"0","  group_by(month) |>"
-"0","  summarize(avg_volume = mean(Volume))"
-"0",""
-"0","monthly_avg"

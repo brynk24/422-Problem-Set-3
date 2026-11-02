@@ -1,4 +1,0 @@
-"0","can_gas_recent <- can_gas |>"
-"0","  filter(Month >= yearmonth(""1990 Jan""))"
-"0",""
-"0","head(can_gas_recent)"

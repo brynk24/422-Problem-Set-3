@@ -9,8 +9,19 @@ format:
 execute:
   warning: false
   message: false
-  **GitHub repo:** <https://github.com/brynk24/ec422_ps3_kramlich>
 ---
+
+**GitHub repo:** <https://github.com/YOUR_USERNAME/ec422_ps3_kramlich>
+
+```{r}
+library(fpp3)
+library(tidyverse)
+library(tidyr)
+library(forecast)
+```
+
+
+## 1. Time and Tsibbles
 
 ```{r}
 library(readr)
@@ -33,6 +44,7 @@ retail_raw <- read_csv(
 
 head(retail_raw)
 ```
+
 ```{r}
 retail_raw_long <- retail_raw |>
   select(observation_date, RSAFS, RSAFSNA) |>
@@ -41,6 +53,7 @@ retail_raw_long <- retail_raw |>
 
 head(retail_raw_long)
 ```
+
 ```{r}
 library(fpp3)
 
@@ -156,6 +169,9 @@ can_gas |>
 ```
 I added a smoothed trend line using geom_smooth() to make the overall growth in Canadian natural gas production easier to see by reducing the visual impact of seasonal fluctuations.
 The seasonal swings in Canadian gas production generally become larger as production increases, especially from the 1960s through the 1980s. However, this pattern does not continue throughout the entire sample, as the seasonal fluctuations become smaller and less consistent toward the end of the series
+
+## 2. Transformations
+
 ```{r}
 can_gas <- can_gas |>
   mutate(log_volume = log(Volume))
@@ -251,6 +267,9 @@ retail_ts |>
   theme_minimal()
 ```
 The NSA series has much larger month-to-month fluctuations than the SA series because it includes seasonal changes, such as holiday spending. The SA series is much smoother because seasonal adjustment removes these predictable patterns. This connects to Section 2.7b, where we saw that seasonal adjustment reduces seasonal fluctuations while keeping the overall long-term trend similar.
+
+## 3. Seasonality
+
 ```{r}
 retail_ts |>
   filter(series_id == "RSAFSNA") |>
@@ -351,6 +370,9 @@ can_gas_fit |>
   theme_minimal()
 ```
 The fitted line captures the overall upward trend and seasonal patterns fairly well, especially from 1990 to 2000. However, it misses the rapid growth in the early 1960s, overestimates production during the 1980s, and overestimates production again in the early 2000s.
+
+## 4. Forecast Evaluation
+
 ```{r}
 can_gas_fit |>
   gg_tsresiduals()
@@ -398,4 +420,7 @@ gas_roll_fc |>
   accuracy(can_gas, measures = list(MAE = MAE, RMSE = RMSE))
 ```
 The TSLM model's forecast accuracy improved the most when switching to a rolling window, with MAE decreasing from 4.009 to 2.095 and RMSE decreasing from 4.362 to 2.425. This is because the rolling window allows the model to better adapt to recent changes in the trend rather than relying on older data, which caused poor fitted values in Part 4.4b. The SNAIVE model's accuracy remained unchanged because it only uses the previous year's observation to forecast.
+
+## 5. Reflection
+
 The residuals from the linear trend and seasonal model showed strong autocorrelation, indicating that the model was missing important patterns in the data. The Ljung–Box test confirmed that the residuals were not white noise, meaning the model failed to capture all the predictable structure. In the forecast evaluation, the seasonal random walk model performed significantly better than the linear trend model. Switching to a rolling window improved the trend model's accuracy because it could better adapt to recent changes in production. A more advanced model that captures changing trends and autocorrelation, such as an ARIMA model, might produce more accurate forecasts.
