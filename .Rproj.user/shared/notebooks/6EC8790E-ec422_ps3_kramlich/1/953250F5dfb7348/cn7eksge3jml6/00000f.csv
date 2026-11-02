@@ -1,0 +1,7 @@
+"0","can_gas |>"
+"0","  gg_subseries(log_volume) +"
+"0","  labs("
+"0","    title = ""Subseries Plot: Canadian Gas Production"","
+"0","    y = ""log(Volume)"""
+"0","  ) +"
+"0","  theme_minimal()"

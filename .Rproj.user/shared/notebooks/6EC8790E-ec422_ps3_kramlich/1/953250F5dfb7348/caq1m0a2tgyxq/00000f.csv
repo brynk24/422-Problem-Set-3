@@ -1,0 +1,7 @@
+"0","library(fpp3)"
+"0",""
+"0","retail_ts <- retail_raw_long |>"
+"0","  mutate(Month = yearmonth(observation_date)) |>"
+"0","  as_tsibble(index = Month, key = series_id)"
+"0",""
+"0","head(retail_ts)"

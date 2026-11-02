@@ -1,0 +1,6 @@
+"0","retail_nsa_x13 <- retail_ts |>"
+"0","  filter(series_id == ""RSAFSNA"") |>"
+"0","  model(x13 = X_13ARIMA_SEATS(sales)) |>"
+"0","  components()"
+"0",""
+"0","retail_nsa_x13 |> autoplot()"

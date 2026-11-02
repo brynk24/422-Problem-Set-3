@@ -1,0 +1,6 @@
+"0","can_gas_q <- can_gas |>"
+"0","  filter(Month <= yearmonth(""2004 Dec"")) |>"
+"0","  index_by(Quarter = yearquarter(Month)) |>"
+"0","  summarize(Volume = sum(Volume))"
+"0",""
+"0","head(can_gas_q)"

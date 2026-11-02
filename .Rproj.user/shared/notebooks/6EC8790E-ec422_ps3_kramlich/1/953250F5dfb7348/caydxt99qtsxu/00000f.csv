@@ -1,0 +1,8 @@
+"0","can_gas |>"
+"0","  autoplot(growth_gap) +"
+"0","  labs("
+"0","    title = ""Difference Between Growth Rate Methods"","
+"0","    x = ""Year"","
+"0","    y = ""Absolute Difference (Percentage Points)"""
+"0","  ) +"
+"0","  theme_minimal()"

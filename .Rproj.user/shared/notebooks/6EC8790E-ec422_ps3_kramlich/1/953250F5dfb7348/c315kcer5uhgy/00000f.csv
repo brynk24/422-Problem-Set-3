@@ -1,0 +1,8 @@
+"0","retail_ts |>"
+"0","  filter(series_id == ""RSAFSNA"") |>"
+"0","  gg_season(sales) +"
+"0","  labs("
+"0","    title = ""Seasonal Pattern in NSA Retail Sales"","
+"0","    y = ""Millions of dollars"""
+"0","  ) +"
+"0","  theme_minimal()"

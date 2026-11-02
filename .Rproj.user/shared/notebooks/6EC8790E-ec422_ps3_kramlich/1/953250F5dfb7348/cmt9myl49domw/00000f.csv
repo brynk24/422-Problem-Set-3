@@ -1,0 +1,8 @@
+"0","can_gas |>"
+"0","  autoplot(growth_direct) +"
+"0","  labs("
+"0","    title = ""Monthly Growth Rate of Canadian Natural Gas Production"","
+"0","    x = ""Year"","
+"0","    y = ""Monthly Growth Rate (%)"""
+"0","  ) +"
+"0","  theme_minimal()"
